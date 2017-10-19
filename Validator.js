@@ -1,66 +1,57 @@
 class Validator
 {
-
+  //check is string
   isString(str)
   {
     let reg = new RegExp("^([a-z0-9]{5,})$");
     if (reg.test(str))
-    {
-    console.log("Valid");
-    }
+		return true;
     else
-    {
-    console.log("Invalid");
-    }
+		return false;
   }
-
+  //check is number
   isNumber(num)
   {
     let numberRegExp = /^[+-]?(([0-9])+([.][0-9]*)?|[.][0-9]+)$/;
     if(!numberRegExp.test(num))
-    {
-    console.log('it is not number');
-    }
+		return false;
   }
 
-
+  //check is integer
   isInt(num)
   {
     let intRegex = /^\d+$/;
     if(!intRegex.test(num))
-    {
-      console.log('must be an integer:');
-    }
+		return false;
   }
 
+  //check is float number
   isFloat(num)
   {
     let floatRegex = /^-?\d*(\.\d+)?$/;
     if (!floatRegex.test(num))
-    {
-     console.log('must be an float Number');
-    }
+		return false;
 
   }
-
+  
+  
+   //check is date
    isDate(date)
   {
 
   let dateRegex = /^\d{2}[./-]\d{2}[./-]\d{4}$/;
     if(!dateRegex.test(date));
-    {
-      console.log("date error");
-    }
+		return false;
   }
 
+  
+  //check is special symbol
   isSpecialSymbol(sym)
   {
 
     let symbolRegExp = /^[!@#\$%\^\&*\)\(+=~._-]+$/;
     if(!symbolRegExp.test(sym))
-    {
-      console.log ('symbol error');
-    }
+		return false;
 
   }
 }

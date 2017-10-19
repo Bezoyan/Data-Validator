@@ -5,15 +5,15 @@ module.exports = class UserNameValidator extends Validator
   {
 
    if(!username)
-     {
-       console.log('please input Username');
-     }
+     return false;
 
    let UserName_RegExp = /^[\w+_-]{4,24}$/;
+   
    if(UserName_RegExp.test(username) &&  this.isString(username))
      return true;
 
-     else { console.log('Username not exist')}
+     else 
+		 return false;
 
  }
 }

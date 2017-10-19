@@ -4,19 +4,14 @@ module.exports = class URLValidator extends Validator
   isURL(url)
   {
     if(!url)
-      {
-        console.log("NOT URL");
-      }
+      return false;
 
       let urlRegExp = /^((http[s]?|ftp):\/)?\/?([^:\/\s]+)((\/\w+)*\/)([\w\-\.]+[^#?\s]+)(.*)?(#[\w\-]+)?$/;
-      if(urlRegExp.test(url))
+      
+	  if(urlRegExp.test(url))
         return true;
       else
-      {
-        console.log('invalid URL');
-      }
-
-
+		return false;
 
 
   }

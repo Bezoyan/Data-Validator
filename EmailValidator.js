@@ -7,18 +7,13 @@ module.exports = class EmailValidator extends Validator
   {
 
     if(!email)
-    {
-      console.log('Please input email address');
-    }
-    let EmailRegExp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    return false;
+    
+	let EmailRegExp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if(EmailRegExp.test(email))
-      {
-        console.log('Email addres is true');
-      }
+      return true;
       else
-      {
-        console.log('This email is invalid');
-      }
+		return false;
 
     }
 }
